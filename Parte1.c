@@ -3,7 +3,7 @@
 #include <threads.h>
 
 
-int main ()
+int main (void)
 {
     int n = 0, i;
     printf("Digite a quantidade desejada de threads = ");
@@ -13,7 +13,7 @@ int main ()
 
     for(i = 0; i < n; i++)
     {
-        
+        printf("\n");
     }
 
 }
