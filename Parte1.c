@@ -1,6 +1,11 @@
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
+#include <stdint.h>
 #include <threads.h>
+
+void *imprime(void *i){
+    printf("Eu sou a thread %ld e meu ID é %lu.\n",++i,thrd_current());
+}
 
 
 int main (void)
@@ -13,7 +18,9 @@ int main (void)
 
     for(i = 0; i < n; i++)
     {
-        thrd_create(&threads[i], imprime,(void *));
+        thrd_create(&threads[i], imprime,(void *)i);
     }
+
+    thrd_exit(0);
 
 }
